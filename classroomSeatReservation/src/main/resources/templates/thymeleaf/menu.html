@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴</title>
+    <style>
+        /* 노멀라이즈 시작: 기본 스타일 초기화 */
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none; /* 목록 스타일 제거 */
+        }
+
+        a {
+            color: white; /* 링크 텍스트 색상 설정 */
+            text-decoration: none; /* 링크 밑줄 제거 */
+        }
+        /* 노멀라이즈 끝 */
+
+        /* 헤더 스타일 */
+        header {
+            background-color: #248277; /* 배경색 설정 */
+            height: 80px; /* 높이 설정 */
+            line-height: 65px; /* 텍스트 수직 중앙 정렬 */
+            width: 100%; /* 너비 설정 */
+            position: relative; /* 상대적 위치 설정 */
+        }
+
+        /* 앱 이름 스타일 */
+        .app-name {
+            font-size: 2rem; /* 폰트 크기 설정 */
+            color: white; /* 텍스트 색상 설정 */
+            float: left; /* 왼쪽 정렬 */
+            padding-left: 20px; /* 왼쪽 패딩 추가 */
+        }
+
+        /* 내비게이션 스타일 */
+        nav {
+            float: right; /* 오른쪽 정렬 */
+            padding-right: 20px; /* 오른쪽 패딩 추가 */
+        }
+
+        /* 목록 아이템들을 가로로 배치 */
+        nav ul li {
+            display: inline-block; /* inline-block으로 설정 */
+        }
+
+        /* 링크 스타일 */
+        nav ul li a {
+            display: block; /* 블록 요소로 설정 */
+            font-size: 2rem; /* 폰트 크기 설정 */
+            padding: 10px 30px; /* 패딩 설정 */
+        }
+
+        /* 링크에 마우스를 올렸을 때 스타일 */
+        nav ul li:hover a {
+            color: #495057; /* 색상 변경 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 시작 -->
+    <header>
+        <!-- 앱 이름 -->
+        <div class="app-name">앱 이름</div>
+        <!-- 내비게이션 메뉴 -->
+        <nav>
+            <ul>
+                <!-- 각 메뉴 항목 -->
+                <li><a href="index.html">즐겨찾기</a></li>
+                <li><a href="timetable">시간표</a></li>
+                <li><a href="reserveList">예약확인</a></li>
+                <li><a href="myPage">마이페이지</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 헤더 끝 -->
+</body>
+</html>

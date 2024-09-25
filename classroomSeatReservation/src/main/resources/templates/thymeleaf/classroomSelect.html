@@ -1,0 +1,47 @@
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>강의실 선택</title>
+    <link rel="stylesheet" href="/css/classroomStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /> <!-- FontAwesome 추가 -->
+    <style>
+       button {
+            padding: 0.63rem 27rem; /* 안쪽 여백 설정 */
+            border: none; /* 테두리 제거 */
+            border-radius: 1.25rem; /* 테두리 둥글게 설정 */
+            background-color: #67b99a; /* 배경색 설정 */
+            color: white; /* 글자색 설정 */
+            font-size: 2.5rem; /* 글자 크기 설정 */
+            font-weight: bold; /* 글자 굵기 설정 */
+                }
+       button:hover {
+        background-color: #358f80; /* 마우스 버튼 위에 올라갔을 때 배경색 변경 */
+    }
+	
+  /* .heart-icon {
+        margin-left: 10px;  하트 아이콘의 왼쪽 여백 설정 
+        font-size: 2rem;  하트 아이콘의 크기 설정 
+        color: white; 하트 아이콘의 색상 설정 
+    }
+	*/
+    </style>
+</head>
+<body>
+    <header th:replace="/menu.html"></header> <!-- menu.html을 thymeleaf를 통해 헤더에 삽입 -->
+	<footer th:replace="/footer.html"></footer>
+	<h2 th:text="${classNum} + '호관 강의실을 선택해주세요.'">강의실 선택</h2>
+    <!-- 해당 건물의 강의실 버튼 표시 -->
+    <div th:each="classroom : ${classrooms}">
+        <!-- 각 버튼을 누르면 classroomStatus 페이지로 이동하고 해당 강의실의 이름을 전달 -->
+        <form action="/classroomStatus" method="post">
+            <input type="hidden" name="classroomName" th:value="${classroom}" />
+            <button type="submit" th:text="${classroom}">
+                <!-- 강의실 이름 표시 -->
+                <span th:text="${classroom}"></span>
+                <!-- 비어 있는 하트 아이콘 추가
+                <i class="far fa-heart heart-icon"></i> -->
+            </button>
+        </form>
+    </div>
+</body>
+</html>
