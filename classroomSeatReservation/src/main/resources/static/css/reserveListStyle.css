@@ -8,7 +8,7 @@ h1 {
 /* 에러 메시지 스타일 설정 */
 .empty {
     font-size: 1.00rem; /* 폰트 크기 설정 */
-    color: red; /* 텍스트 색상 빨간색으로 설정 */
+    color: #ef6351; /* 텍스트 색상 빨간색으로 설정 */
     text-align: center; /* 텍스트 가운데 정렬 */
     font-weight: bold; /* 텍스트를 굵게 설정 */
     margin-top: 5.00rem; /* 위쪽에 여백 추가 */
@@ -34,7 +34,7 @@ th, td {
 
 /* 테이블 헤더 스타일 설정 */
 th {
-    background-color: #4CAF50; /* 헤더 셀 배경색을 초록색으로 설정 */
+    background-color: #2a6f97; /* 헤더 셀 배경색을 초록색으로 설정 */
     color: white; /* 헤더 셀의 텍스트 색상을 흰색으로 설정 */
     font-weight: bold; /* 텍스트를 굵게 설정 */
     font-size: 1.20rem; /* 폰트 크기 설정 */
@@ -81,24 +81,24 @@ button {
 
 /* 취소 버튼 스타일 */
 button.cancel {
-    background-color: #f44336; /* 취소 버튼 배경색 설정 (붉은색) */
+    background-color: #ef6351; /* 취소 버튼 배경색 설정 (붉은색) */
     color: white; /* 취소 버튼 텍스트 색상을 흰색으로 설정 */
 }
 
 /* 변경 버튼 스타일 */
 button.update {
-    background-color: #4CAF50; /* 변경 버튼 배경색 설정 (초록색) */
+    background-color: #2a6f97; /* 변경 버튼 배경색 설정 (초록색) */
     color: white; /* 변경 버튼 텍스트 색상을 흰색으로 설정 */
 }
 
 /* 취소 버튼 호버 스타일 */
 button.cancel:hover {
-    background-color: #d32f2f; /* 호버 시 배경색을 어두운 빨간색으로 변경 */
+    background-color: #ef6351; /* 호버 시 배경색을 어두운 빨간색으로 변경 */
 }
 
 /* 변경 버튼 호버 스타일 */
 button.update:hover {
-    background-color: #388E3C; /* 호버 시 배경색을 어두운 초록색으로 변경 */
+    background-color: #2a6f97; /* 호버 시 배경색을 어두운 초록색으로 변경 */
 }
 
 /* 폼 내용을 가운데 정렬하기 위한 클래스 */

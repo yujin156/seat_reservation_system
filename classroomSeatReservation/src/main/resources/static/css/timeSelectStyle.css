@@ -11,35 +11,35 @@
     width: 100%;
     margin-bottom: 0.31rem; /* 아래 여백 (5px ÷ 16px = 0.31rem) */
     border-radius: 0.25rem; /* 모서리 둥글기 (4px ÷ 16px = 0.25rem) */
-    border: 0.13rem solid #469d89; /* 버튼 테두리 색상 (2px ÷ 16px = 0.13rem) */
+    border: 0.13rem solid #89c2d9; /* 버튼 테두리 색상 (2px ÷ 16px = 0.13rem) */
     font-weight: bold;
     padding: 0.50rem; /* 내부 여백 (8px ÷ 16px = 0.50rem) */
 }
 
 /* 버튼 hover 효과 */
 .selectHours:hover {
-    background-color: #469d89; /* Hover 효과 색상 */
+    background-color: #61a5c2; /* Hover 효과 색상 */
     color: white;
 }
 
 /* 선택된 버튼 색상 */
 .selectHours.selected {
-    background-color: #469d89; /* 선택된 버튼 색상 */
+    background-color: #61a5c2; /* 선택된 버튼 색상 */
     color: white;
 }
 
 /* 제출 버튼 디자인 */
 .submit {
-    background-color: #67b99a; /* 버튼 색상 */
-    border-color: #67b99a;
+    background-color: #89c2d9; /* 버튼 색상 */
+    border-color: #89c2d9;
     border-radius: 0.25rem; /* 모서리 둥글기 (4px ÷ 16px = 0.25rem) */
     padding: 0.75rem 1.00rem; /* 내부 여백 (12px ÷ 16px = 0.75rem, 16px ÷ 16px = 1.00rem) */
 }
 
 /* 제출 버튼 hover 효과 */
 .submit:hover {
-    background-color: #469d89; /* Hover 효과 색상 */
-    border-color: #469d89;
+    background-color: #61a5c2; /* Hover 효과 색상 */
+    border-color: #61a5c2;
 }
 
 /* form-control 디자인 */
@@ -55,14 +55,14 @@
 
 /* 제목 디자인 */
 h2 {
-    color: #469d89; /* 제목 색상 */
+    color: #2a6f97; /* 제목 색상 */
     font-size: 1.50rem; /* 제목 크기 */
     font-weight: bold; /* 제목 폰트 두께 */
 }
 
 /* 부제목 디자인 */
 h4 {
-    color: #469d89; /* 부제목 색상 */
+    color: #2a6f97; /* 부제목 색상 */
     font-size: 1.13rem; /* 부제목 크기 (18px ÷ 16px = 1.13rem) */
     font-weight: bold; /* 부제목 폰트 두께 */
 }

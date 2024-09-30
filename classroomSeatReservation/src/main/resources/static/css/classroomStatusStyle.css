@@ -11,11 +11,11 @@
 }
 
 .empty {
-    background-color: #cad2c5 !important; /* 빈 좌석 배경색 지정 */
+    background-color: #e1ecf7 !important; /* 빈 좌석 배경색 지정 */
 }
 
 .reserved {
-    background-color: #036666 !important; /* 예약된 좌석 배경색 지정 */
+    background-color: #2a6f97 !important; /* 예약된 좌석 배경색 지정 */
 }
 
 button {
@@ -73,7 +73,7 @@ button {
     height: 2.50rem; /* 버튼의 세로 크기 (40px ÷ 16px = 2.50rem) */
     margin: 1.25rem; /* 버튼들 사이의 여백 추가 (20px ÷ 16px = 1.25rem) */
     border-radius: 0.25rem; /* 버튼의 모서리를 둥글게 만듦 (4px ÷ 16px = 0.25rem) */
-    background-color: #67b99a; /* 버튼의 배경색 설정 */
+    background-color: #89c2d9; /* 버튼의 배경색 설정 */
     color: white; /* 버튼 텍스트 색상 설정 */
     cursor: pointer; /* 마우스 포인터를 손 모양으로 변경 */
     text-align: center; /* 버튼의 텍스트를 가운데 정렬 */

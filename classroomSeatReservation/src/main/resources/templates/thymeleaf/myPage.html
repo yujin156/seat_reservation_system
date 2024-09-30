@@ -5,113 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
     <link rel="stylesheet" href="/css/classroomStyle.css" />
-    <style>
-        body {
-            background-color: #ffffff; /* 배경색 흰색 */
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            width: 100%;
-            background-color: #ffffff;
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .content {
-            margin-top: 60px; /* 헤더 높이만큼 여백 추가 */
-            padding: 20px;
-        }
-
-        table {
-            width: 280px; /* 테이블 너비 */
-            margin: auto;
-        }
-
-        .btn {
-            width: 262px; /* 버튼 크기 */
-            height: 32px;
-            background-color: rgb(164, 199, 255);
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-        }
-
-        .btn:active {
-            background-color: rgb(61, 135, 255);
-        }
-
-        .edit-btn {
-            width: 80px; /* 수정 버튼 크기 */
-            height: 24px; /* 수정 버튼 높이 */
-            background-color: rgb(200, 200, 255);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px; /* 폰트 크기 */
-        }
-
-        .edit-btn:hover {
-            background-color: rgb(150, 150, 255); /* 호버 효과 */
-        }
-
-        .error-message {
-            color: red;
-            display: none; /* 기본적으로 숨김 */
-        }
-
-        /* 모달 스타일 */
-        .modal {
-            display: none; /* 기본적으로 숨김 */
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0); /* 검정 배경 */
-            background-color: rgba(0, 0, 0, 0.4); /* 투명도 */
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 상단에서 15% 떨어진 위치 */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* 모달 너비 */
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/mypageStyle.css" />
 </head>
 <body>
     <header th:replace="~{/menu.html}"></header>
+	<footer th:replace="/footer.html"></footer>
 
     <div class="content">
         <h2>마이페이지</h2>
         <table>
-			<tr>
+            <tr>
                 <td>이름</td>
                 <td><span th:text="${user.name}"></span></td>
+            </tr>
+            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
+                <td>학과</td>
+                <td><span th:text="${user.major}"></span></td>
+            </tr>
+            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
+                <td>학번</td>
+                <td><span th:text="${user.studentId}"></span></td>
+            </tr>
+            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
+                <td>학년 / 반</td>
+                <td>
+                    <span th:text="${user.grade} + '학년 ' + ${user.classNumber} + '반'"></span>
+                    <button class="edit-btn" id="editGradeClassBtn">수정</button>
+                </td>
             </tr>
             <tr>
                 <td>아이디</td>
@@ -121,26 +41,9 @@
                 <td>비밀번호</td>
                 <td>
                     <span>********</span>
-                    <button class="edit-btn" id="editPasswordBtn">수정</button> <!-- 비밀번호 수정 버튼 -->
+                    <button class="edit-btn" id="editPasswordBtn">수정</button>
                 </td>
             </tr>
-           
-            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
-                <td>학번</td>
-                <td><span th:text="${user.studentId}"></span></td>
-            </tr>
-            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
-                <td>학과</td>
-                <td><span th:text="${user.major}"></span></td>
-            </tr>
-            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
-                <td>학년 / 반</td>
-                <td>
-                    <span th:text="${user.grade} + '학년 ' + ${user.classNumber} + '반'"></span>
-                    <button class="edit-btn" id="editGradeClassBtn">수정</button> <!-- 수정 버튼 -->
-                </td>
-            </tr>
-			
         </table>
 
         <div style="margin-top: 20px;">
@@ -201,7 +104,6 @@
     </div>
 
     <script>
-        // 학년/반 수정 모달 열기 및 닫기
         const gradeClassModal = document.getElementById("gradeClassModal");
         const editGradeClassBtn = document.getElementById("editGradeClassBtn");
         const closeGradeClassModal = document.getElementById("closeGradeClassModal");
@@ -214,7 +116,6 @@
             gradeClassModal.style.display = "none";
         }
 
-        // 비밀번호 수정 모달 열기 및 닫기
         const passwordModal = document.getElementById("passwordModal");
         const closePasswordModal = document.getElementById("closePasswordModal");
 
@@ -233,46 +134,8 @@
             }
         }
 
-        // 학년/반 폼 유효성 검사 함수
-        function validateGradeClassForm() {
-            // 추가적인 유효성 검사 로직을 여기에 추가할 수 있습니다.
-            alert("학년 / 반 정보가 수정되었습니다.");
-            return true; // 폼 제출
-        }
-
-        // 비밀번호 폼 유효성 검사 함수
-        function validatePasswordForm() {
-            var oldPassword = document.getElementById("oldPassword").value;
-            var newPassword = document.getElementById("newPassword").value;
-            var oldPasswordError = document.getElementById("oldPasswordError");
-            var passwordError = document.getElementById("passwordError");
-
-            // 비밀번호 패턴 정의: 최소 8자, 문자와 숫자를 반드시 포함
-            var passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-
-            // 기존 비밀번호가 틀린 경우
-            if (oldPassword !== "비밀번호_가정용") { // 실제 비밀번호와 비교해야 함
-                oldPasswordError.style.display = "inline";
-                return false; // 폼 제출 중단
-            } else {
-                oldPasswordError.style.display = "none"; // 오류 메시지 숨김
-            }
-
-            // 새 비밀번호의 유효성 검사
-            if (!passwordPattern.test(newPassword)) {
-                passwordError.style.display = "inline";
-                return false; // 폼 제출 중단
-            } else {
-                passwordError.style.display = "none"; // 오류 메시지 숨김
-            }
-
-            // 비밀번호 수정 성공 메시지
-            alert("비밀번호가 수정되었습니다.");
-            return true; // 폼 제출
-        }
-
         function confirmDelete() {
-            return confirm("정말로 회원 탈퇴하시겠습니까?");
+            return confirm("정말 회원 탈퇴를 하시겠습니까?");
         }
     </script>
 </body>
