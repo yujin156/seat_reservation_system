@@ -77,7 +77,7 @@ button {
     width: 4rem; /* 버튼 너비 설정 */
     height: 4rem; /* 버튼 높이 설정 */
     font-size: 1.2rem; /* 버튼 글자 크기 설정 */
-    background-color: #0077b6; /* 버튼 배경색 설정 */
+    background-color: #778da9; /* 버튼 배경색 설정 */
     color: white; /* 버튼 텍스트 색상 흰색 */
     border: none; /* 테두리 제거 */
     border-radius: 1.25rem; /* 테두리를 둥글게 설정 */
@@ -87,7 +87,7 @@ button {
 }
 
 button:hover {
-    background-color: #023e8a; /* 마우스를 올리면 버튼 배경색 변경 */
+    background-color: #415a77; /* 마우스를 올리면 버튼 배경색 변경 */
     transform: scale(1.05); /* 마우스를 올리면 버튼이 살짝 커지는 효과 추가 */
 }
 /* 버튼 컨테이너 중앙 정렬 */
@@ -135,7 +135,7 @@ th, td {
 
 /* 테이블 헤더 스타일 */
 th {
-    background-color: #2a6f97; /* 헤더 배경색 설정 */
+    background-color: #778da9; /* 헤더 배경색 설정 */
     color: #fff; /* 헤더 텍스트 색상 설정 */
 }
 
@@ -175,7 +175,7 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="submit"] {
-    background-color: #0077b6; /* 제출 버튼 배경색 설정 */
+    background-color: #778da9; /* 제출 버튼 배경색 설정 */
     color: white; /* 버튼 텍스트 색상 흰색 */
     border: none; /* 버튼 테두리 제거 */
     border-radius: 0.94rem; /* 버튼 테두리를 둥글게 설정 */
@@ -186,5 +186,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #023e8a; /* 제출 버튼 호버 시 배경색 변경 */
+    background-color: #415a77; /* 제출 버튼 호버 시 배경색 변경 */
 }

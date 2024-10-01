@@ -47,30 +47,32 @@ tr:last-of-type td {
 .btn {
     width: 16.375rem; /* 너비 16.375rem */
     height: 2rem; /* 높이 2rem */
-    background-color:#89c2d9; /* 배경색 연파란색 */
+    background-color:#778da9; /* 배경색 연파란색 */
     border: none; /* 테두리 없음 */
     border-radius: 1.875rem; /* 둥근 모서리 */
     cursor: pointer; /* 커서 포인터 */
+	color: white; /* 글자 색상 흰색 */
 }
 /* 기본 버튼에 마우스 오버 시 색상 변경 */
 .btn:hover {
-    background-color:#61a5c2; /* 마우스 오버 시 색상 변경 */
+    background-color:#415a77; /* 마우스 오버 시 색상 변경 */
 }
 
 /* 수정 버튼 스타일 설정 */
 .edit-btn {
     width: 5rem; /* 너비 5rem */
     height: 1.5rem; /* 높이 1.5rem */
-    background-color:#89c2d9; /* 배경색 연보라색 */
+    background-color:#778da9; /* 배경색 연보라색 */
     border: none; /* 테두리 없음 */
     border-radius: 0.3125rem; /* 둥근 모서리 */
     cursor: pointer; /* 커서 포인터 */
     font-size: 0.875rem; /* 글자 크기 0.875rem */
+	color: white; /* 글자 색상 흰색 */
 }
 
 /* 수정 버튼에 마우스 오버 시 색상 변경 */
 .edit-btn:hover {
-    background-color:#61a5c2; /* 마우스 오버 시 색상 변경 */
+    background-color:#415a77; /* 마우스 오버 시 색상 변경 */
 }
 
 /* 오류 메시지 스타일 설정 */
