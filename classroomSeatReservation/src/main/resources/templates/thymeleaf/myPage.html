@@ -10,54 +10,55 @@
 <body>
     <header th:replace="~{/menu.html}"></header>
 	<footer th:replace="/footer.html"></footer>
+	<form id="mypageForm" action="/updateUserInfo" method="post" style="box-shadow: 0 4px 8px rgba(3, 4, 94, 0.4); padding: 1rem; border-radius: 0.5rem;">
+	    <div class="content">
+	        <h2>마이페이지</h2>
+	        <table>
+	            <tr>
+	                <td>이름</td>
+	                <td><span th:text="${user.name}"></span></td>
+	            </tr>
+	            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
+	                <td>학과</td>
+	                <td><span th:text="${user.major}"></span></td>
+	            </tr>
+	            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
+	                <td>학번</td>
+	                <td><span th:text="${user.studentId}"></span></td>
+	            </tr>
+	            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
+	                <td>학년 / 반</td>
+	                <td>
+	                    <span th:text="${user.grade} + '학년 ' + ${user.classNumber} + '반'"></span>
+	                    <button class="edit-btn" id="editGradeClassBtn">수정</button>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td>아이디</td>
+	                <td><span th:text="${user.id}"></span></td>
+	            </tr>
+	            <tr>
+	                <td>비밀번호</td>
+	                <td>
+	                    <span>********</span>
+	                    <button class="edit-btn" id="editPasswordBtn">수정</button>
+	                </td>
+	            </tr>
+	        </table>
 
-    <div class="content">
-        <h2>마이페이지</h2>
-        <table>
-            <tr>
-                <td>이름</td>
-                <td><span th:text="${user.name}"></span></td>
-            </tr>
-            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
-                <td>학과</td>
-                <td><span th:text="${user.major}"></span></td>
-            </tr>
-            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
-                <td>학번</td>
-                <td><span th:text="${user.studentId}"></span></td>
-            </tr>
-            <tr th:if="${user instanceof T(com.tbfg.dto.UserDTO)}">
-                <td>학년 / 반</td>
-                <td>
-                    <span th:text="${user.grade} + '학년 ' + ${user.classNumber} + '반'"></span>
-                    <button class="edit-btn" id="editGradeClassBtn">수정</button>
-                </td>
-            </tr>
-            <tr>
-                <td>아이디</td>
-                <td><span th:text="${user.id}"></span></td>
-            </tr>
-            <tr>
-                <td>비밀번호</td>
-                <td>
-                    <span>********</span>
-                    <button class="edit-btn" id="editPasswordBtn">수정</button>
-                </td>
-            </tr>
-        </table>
-
-        <div style="margin-top: 20px;">
-            <a href="/logout" style="text-decoration: none;">
-                <button class="btn">로그아웃</button>
-            </a>
-        </div>
-        <div style="margin-top: 20px;">
-            <form id="deleteUserForm" action="/deleteUser" method="post" onsubmit="return confirmDelete()">
-                <input type="hidden" name="id" th:value="${user.id}">
-                <button type="submit" style="color: red; background: none; border: none; cursor: pointer;">회원 탈퇴하기</button>
-            </form>
-        </div>
-    </div>
+	        <div style="margin-top: 20px;">
+	            <a href="/logout" style="text-decoration: none;">
+	                <button class="btn">로그아웃</button>
+	            </a>
+	        </div>
+	        <div style="margin-top: 20px;">
+	            <form id="deleteUserForm" action="/deleteUser" method="post" onsubmit="return confirmDelete()">
+	                <input type="hidden" name="id" th:value="${user.id}">
+	                <button type="submit" style="color: red; background: none; border: none; cursor: pointer;">회원 탈퇴하기</button>
+	            </form>
+	        </div>
+	    </div>
+	</form>
 
     <!-- 학년/반 수정 모달 -->
     <div id="gradeClassModal" class="modal">

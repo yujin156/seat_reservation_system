@@ -63,12 +63,12 @@ public class UserController {
         return "login";  // login.html 반환
     }
     
-    // 로그아웃 처리를 위한 메서드
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        session.invalidate(); // 세션을 초기화하여 로그아웃 처리
+        session.invalidate(); // 세션을 완전히 초기화하여 로그아웃 처리
         return "redirect:/login"; // 로그인 페이지로 리다이렉트
     }
+
     
     @PostMapping("/signupCheck")
     public String signupUser(@RequestParam String id,

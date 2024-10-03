@@ -90,6 +90,7 @@ button:hover {
     background-color: #415a77; /* 마우스를 올리면 버튼 배경색 변경 */
     transform: scale(1.05); /* 마우스를 올리면 버튼이 살짝 커지는 효과 추가 */
 }
+
 /* 버튼 컨테이너 중앙 정렬 */
 .button-container {
     text-align: center; /* 버튼을 가운데 정렬 */

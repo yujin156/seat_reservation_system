@@ -29,11 +29,11 @@ button {
     color: white; /* 글자색 설정 */
     font-size: 1.5rem; /* 글자 크기 설정 */
     font-weight: bold; /* 글자 굵기 설정 */
-    background-color: #0077b6; /* 배경색 설정 */
+    background-color: #778da9; /* 배경색 설정 */
 }
 
 button:hover {
-    background-color: #023e8a; /* 마우스 버튼 위에 올라갔을 때 배경색 변경 */
+    background-color: #415a77; /* 마우스 버튼 위에 올라갔을 때 배경색 변경 */
 }
 
 button i {
