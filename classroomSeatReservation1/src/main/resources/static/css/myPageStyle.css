@@ -111,7 +111,21 @@ tr:last-of-type td {
     width: 60%; /* 너비 60% */
     max-width: 25rem; /* 최대 너비 25rem */
 }
-
+/*input 스타일 */
+input[type="text"], input[type="number"] {
+    width: calc(100% - 1.38rem); /* 입력창 너비 설정 */
+    padding: 0.63rem; /* 내부 여백 설정 */
+    margin: 0.63rem 0; /* 위아래 여백 설정 */
+    border-radius: 0.94rem; /* 입력창 테두리를 둥글게 설정 */
+    border: 1px solid grey; /* 연한 회색 테두리 추가 */
+}
+input[type="password"] {
+    width: calc(100% - 1.38rem); /* 입력창 너비 설정 */
+    padding: 0.63rem; /* 내부 여백 설정 */
+    margin: 0.63rem 0; /* 위아래 여백 설정 */
+    border-radius: 0.94rem; /* 입력창 테두리를 둥글게 설정 */
+    border: 1px solid grey; /* 연한 회색 테두리 추가 */
+}
 /* 모달 닫기 버튼 스타일 설정 */
 .close {
     color: #aaa; /* 글자 색상 회색 */

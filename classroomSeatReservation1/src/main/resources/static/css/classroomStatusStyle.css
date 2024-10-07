@@ -11,11 +11,12 @@
 }
 
 .empty {
-    background-color: #e1ecf7 !important; /* 빈 좌석 배경색 지정 */
+    background-color: lightgray !important; /* 빈 좌석 배경색 지정 */
 }
 
 .reserved {
-    background-color: #2a6f97 !important; /* 예약된 좌석 배경색 지정 */
+    background-color: #415a77 !important; /* 예약된 좌석 배경색 지정 */
+	color: white;
 }
 
 button {
@@ -34,7 +35,7 @@ button {
 .modal {
     display: none; /* 숨김 상태로 시작 */
     position: fixed; /* 화면에 고정 위치 */
-    z-index: 1; /* 모달이 다른 요소들 위에 표시되도록 */
+    z-index: 1001; /* 모달이 다른 요소들 위에 표시되도록 */
     left: 0;
     top: 0;
     width: 100%;
@@ -47,9 +48,10 @@ button {
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 1.25rem; /* 패딩 (20px ÷ 16px = 1.25rem) */
+    padding: 2rem; /* 패딩 (20px ÷ 16px = 1.25rem) */
     border: 0.06rem solid #888; /* 테두리 (1px ÷ 16px = 0.06rem) */
-    width: 80%;
+    width: 60%;
+	max-width: 25rem; /* 최대 너비 25rem */
 }
 
 .close {
@@ -73,7 +75,7 @@ button {
     height: 2.50rem; /* 버튼의 세로 크기 (40px ÷ 16px = 2.50rem) */
     margin: 1.25rem; /* 버튼들 사이의 여백 추가 (20px ÷ 16px = 1.25rem) */
     border-radius: 0.25rem; /* 버튼의 모서리를 둥글게 만듦 (4px ÷ 16px = 0.25rem) */
-    background-color: #89c2d9; /* 버튼의 배경색 설정 */
+    background-color: #415a77; /* 버튼의 배경색 설정 */
     color: white; /* 버튼 텍스트 색상 설정 */
     cursor: pointer; /* 마우스 포인터를 손 모양으로 변경 */
     text-align: center; /* 버튼의 텍스트를 가운데 정렬 */
